@@ -1,0 +1,20 @@
+{% extends "bases.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-5 m-auto mt-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Inscription</button>
+        </form>
+        <p class="mt-2">
+            Vous avez un compte ?
+            <a href="{% url 'login' %}">Connexion</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

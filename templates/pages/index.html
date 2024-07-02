@@ -1,0 +1,27 @@
+{% extends "bases.html" %}
+{% comment %} # Admin@2024 {% endcomment %}
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    
+    <div class="col">
+      <div class="card">
+        <h5 class="card-title text-center bg-black text-white">Card title</h5>
+        <div class="card-body">
+          <p class="card-title text-center">Résumé: Une petite description de l'article</p>
+          <p class="card-text">This is a longer card xt below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h6> 
+            auteur  :          <br>
+            Ajouter :           <br>
+            mise à jour:
+         </h6>
+        </div>
+        {% comment %} <div class="card-footer text-body-secondary text-center">
+            détails >>
+        </div> {% endcomment %}
+      </div>
+    </div>
+
+</div>
+
+{% endblock %}

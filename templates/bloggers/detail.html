@@ -1,0 +1,38 @@
+{% extends "bases.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row g-4 m-auto">
+            <div class="col m-auto">
+                <div class="card">
+                    <h2 class="card-title text-center bg-black text-white"> 
+                            {{ blogs.titre }} 
+                    </h2>
+                    <div class="card-body">
+                        <p class="card-title text-center"> {{ blogs.description }} </p>
+                        <p class="card-text justify-content-center"> {{ blogs.content }} </p> 
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                auteur  : {{ blogs.auteur }}
+                            </li>
+                            <li class="list-group-item">
+                                création : {{ blogs.create_date | date:"d-m-y" }}
+                            </li>
+                            <li class="list-group-item">
+                                mise à jour: {{ blogs.update_date| date:"d-m-y"  }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div> 
+    <div class="row g-4 m-auto">
+        <div class="col m-auto d-flex justify-content-evenly mt-4">
+            <a href="{% url 'ajouter' %}" class="btn btn-primary" type="submit"> Ajouter </a>
+            <a  href="{% url 'edit_artcle' blogs.id %}" class="btn btn-info" type="submit"> Modifier </a>
+            <a href="{% url 'delete_artcle' blogs.id %}" class="btn btn-danger" type="submit"> Supprimer </a> 
+        </div>
+    </div>  
+</div>
+{% endblock %}
+

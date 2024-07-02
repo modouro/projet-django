@@ -1,0 +1,56 @@
+{% extends "bases.html" %}
+
+{% block content %}
+<div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+            {% for blog in blogs %}
+                <div class="col">
+                    <div class="card">
+                        <h6 class="card-title text-center bg-black text-white"> 
+                            <a class="nav-link" href="{% url "detail" blog.id %}">
+                                {{ blog.titre }}
+                            {% comment %} </a>  {% endcomment %}
+                        </h6>
+                        <div class="card-body">
+                            <p class="card-title text-center"> {{ blog.description }} </p>
+                            <p class="card-text overflow-x-auto" style="height: 80px;"> {{ blog.content }} </p>
+                            <h6> 
+                                auteur  : {{ blog.auteur }}<br>
+                                création : {{ blog.create_date | date:"d-m-y" }} <br>
+                                mise à jour: {{ blog.update_date| date:"d-m-y"  }}
+                            </h6>
+                        </div>
+            {% comment %} {% empty %}
+                        <!-- Si blogs est vide, afficher le bouton Ajouter -->
+                        <div class="col">
+                            <a class="btn btn-primary text-uppercase" href="{% url 'ajouter' %}">
+                                Ajouter 
+                            </a>
+                        </div> {% endcomment %}
+                    </div>
+                </a> 
+                </div>
+            {% endfor %}
+        </div>
+     <div class="d-flex justify-content-center mt-2">
+        <ul class="pagination pagination-lg">
+            {% if blogs.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ blogs.previous_page_number }}">Previous</a>
+                </li>
+            {% endif %}
+            {% for i in blogs.pagination.page_range %}
+                <li class="page-item active" aria-current="page" {% if blogs.number == i %}active{% endif %}>
+                    <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endfor %}
+            {% if blogs.has_next %}
+                <li class="page-items">
+                    <a class="page-link" href="?page={{ blogs.next_page_number }}">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>   
+</div>
+{% endblock %}
+
