@@ -12,14 +12,18 @@
                         <p class="card-title text-center"> {{ blogs.description }} </p>
                         <p class="card-text justify-content-center font-monospace"> {{ blogs.content }} </p> 
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
+                            <li class="list-group-item text-black fw-bold fs-5 text-capitalize">
                                 auteur  : {{ blogs.auteur }}
                             </li>
-                            <li class="list-group-item">
-                                création : {{ blogs.create_date | date:"d-m-y" }}
+                            <li class="list-group-item ">
+                                <span class="bg-primary text-white fw-bold fs-5 text-capitalize m-auto"> 
+                                    création : {{ blogs.create_date | date:"d-m-y" }}
+                                </span>
                             </li>
                             <li class="list-group-item">
+                                <span class="bg-info text-black fw-bold fs-5 text-capitalize">
                                 mise à jour: {{ blogs.update_date | date:"d-m-y"  }}
+                                </span>
                             </li>
                         </ul>
                     </div>
