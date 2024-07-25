@@ -10,7 +10,7 @@
                     </h2>
                     <div class="card-body">
                         <p class="card-title text-center"> {{ blogs.description }} </p>
-                        <p class="card-text justify-content-center"> {{ blogs.content }} </p> 
+                        <p class="card-text justify-content-center font-monospace"> {{ blogs.content }} </p> 
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 auteur  : {{ blogs.auteur }}
@@ -19,7 +19,7 @@
                                 création : {{ blogs.create_date | date:"d-m-y" }}
                             </li>
                             <li class="list-group-item">
-                                mise à jour: {{ blogs.update_date| date:"d-m-y"  }}
+                                mise à jour: {{ blogs.update_date | date:"d-m-y"  }}
                             </li>
                         </ul>
                     </div>

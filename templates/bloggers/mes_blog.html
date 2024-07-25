@@ -9,24 +9,16 @@
                         <h6 class="card-title text-center bg-black text-white"> 
                             <a class="nav-link" href="{% url "detail" blog.id %}">
                                 {{ blog.titre }}
-                            {% comment %} </a>  {% endcomment %}
                         </h6>
                         <div class="card-body">
                             <p class="card-title text-center"> {{ blog.description }} </p>
-                            <p class="card-text overflow-x-auto" style="height: 80px;"> {{ blog.content }} </p>
+                            <p class="card-text overflow-x-auto font-monospace" style="height: 80px;"> {{ blog.content }} </p>
                             <h6> 
                                 auteur  : {{ blog.auteur }}<br>
                                 création : {{ blog.create_date | date:"d-m-y" }} <br>
                                 mise à jour: {{ blog.update_date| date:"d-m-y"  }}
                             </h6>
                         </div>
-            {% comment %} {% empty %}
-                        <!-- Si blogs est vide, afficher le bouton Ajouter -->
-                        <div class="col">
-                            <a class="btn btn-primary text-uppercase" href="{% url 'ajouter' %}">
-                                Ajouter 
-                            </a>
-                        </div> {% endcomment %}
                     </div>
                 </a> 
                 </div>
