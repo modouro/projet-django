@@ -74,10 +74,3 @@ def delete_article(request, id):
         blogs.delete()
         return redirect("/blog/")
     return render (request, "bloggers/delete_article.html", {"blogs": blogs} )
-
-
-
-
-# Create your views here.
-#when you change de views in your app 
-# erreur new_aticle Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000022EEEB19010>>": "Blog.auteur" must be a "User" instance.
